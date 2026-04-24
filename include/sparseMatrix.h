@@ -1,0 +1,16 @@
+//
+// Created by Benjamin Toro Leddihn on 24/04/26.
+//
+
+#ifndef SPARSE_MATRIX_SPREADSHEET_CPP_SPARSEMATRIX_H
+#define SPARSE_MATRIX_SPREADSHEET_CPP_SPARSEMATRIX_H
+
+
+
+class sparseMatrix {
+
+};
+
+
+
+#endif //SPARSE_MATRIX_SPREADSHEET_CPP_SPARSEMATRIX_H
