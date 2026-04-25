@@ -5,15 +5,25 @@
 #ifndef SPARSE_MATRIX_SPREADSHEET_CPP_NODE_H
 #define SPARSE_MATRIX_SPREADSHEET_CPP_NODE_H
 
-template <typename T>
 struct CellNode {
     int column;
     int row;
-    string value;
-    CellNode<T> *right;
-    CellNode<T> *down;
+    std::string value;
+    CellNode* right;
+    CellNode* down;
+};
+
+struct RowHeader {
+    int row;
+    CellNode* firstCell;
+    RowHeader* next;
 };
 
 
+struct ColumnHeader {
+    int column;
+    CellNode* firstCell;
+    ColumnHeader* next;
+};
 
 #endif //SPARSE_MATRIX_SPREADSHEET_CPP_NODE_H
