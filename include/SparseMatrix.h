@@ -1,35 +1,37 @@
-//
-// Created by Benjamin Toro Leddihn on 25/04/26.
-//
-
-#ifndef SPARSE_MATRIX_SPREADSHEET_CPP_SPARSEMATRIX_H
-#define SPARSE_MATRIX_SPREADSHEET_CPP_SPARSEMATRIX_H
+#ifndef SPARSEMATRIX_H
+#define SPARSEMATRIX_H
 
 #include <string>
 #include "Node.h"
 
+// La matriz dispersa almacena solo las celdas con contenido.
+// Estructura: listas enlazadas cruzadas —> cada nodo está en una lista de fila y en una lista de columna.
 class SparseMatrix {
-    RowHeader* rowHeader;
-    ColumnHeader* columnHeader;
 public:
-    SparseMatrix() {}
+    RowHeader* rowHeaders;   // lista de cabeceras de fila
+    ColHeader* colHeaders;   // lista de cabeceras de columna
 
-    CellNode* findRow(int row);
-    CellNode* findColumn(int column);
-    CellNode* getOrCreateRow(int row);
-    CellNode* getOrCreateColumn(int column);
-    CellNode* findNodeInRow();
-    CellNode* findNodeInColumn();;
-    void setCell(int row, int column, std::string value);
-    void insertCell(int row, int column, std::string value);
-    void insertColumn();
-    std::string getCell(int row, int column);
-    bool removeCell(int row, int column);
+    SparseMatrix();
+    ~SparseMatrix();
+
+    // Operaciones básicas de celda
+    void setCell(int row, int col, const std::string& value);  // insertar o actualizar
+    std::string getCell(int row, int col);                     // consultar (vacío si no existe)
+    bool removeCell(int row, int col);                         // eliminar celda
+
+    // Operaciones sobre filas y columnas
+    void deleteRow(int row);
+    void deleteCol(int col);
+    void deleteRange(int r1, int c1, int r2, int c2);
+
+    // Limpieza total
     void clear();
 
+private:
+    RowHeader* findRowHeader(int row);
+    ColHeader* findColHeader(int col);
+    RowHeader* getOrCreateRowHeader(int row);
+    ColHeader* getOrCreateColHeader(int col);
 };
 
-
-
-
-#endif //SPARSE_MATRIX_SPREADSHEET_CPP_SPARSEMATRIX_H
+#endif
