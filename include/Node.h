@@ -1,29 +1,30 @@
-//
-// Created by Benjamin Toro Leddihn on 25/04/26.
-//
+#ifndef NODE_H
+#define NODE_H
 
-#ifndef SPARSE_MATRIX_SPREADSHEET_CPP_NODE_H
-#define SPARSE_MATRIX_SPREADSHEET_CPP_NODE_H
+#include <string>
 
+// Un nodo representa una celda no-vacía en la hoja de cálculo.
+// Solo existimos si tenemos contenido —> las celdas vacías no gastan memoria.
 struct CellNode {
-    int column;
     int row;
+    int col;
     std::string value;
-    CellNode* right;
-    CellNode* down;
+    CellNode* right; // siguiente nodo en la misma fila
+    CellNode* down;  // siguiente nodo en la misma columna
 };
 
+// Cabecera de fila: punto de entrada para recorrer todos los nodos de una fila
 struct RowHeader {
     int row;
-    CellNode* firstCell;
-    RowHeader* next;
+    CellNode* first; // primer nodo de la fila
+    RowHeader* next; // siguiente cabecera de fila
 };
 
-
-struct ColumnHeader {
-    int column;
-    CellNode* firstCell;
-    ColumnHeader* next;
+// Cabecera de columna: punto de entrada para recorrer todos los nodos de una columna
+struct ColHeader {
+    int col;
+    CellNode* first; // primer nodo de la columna
+    ColHeader* next; // siguiente cabecera de columna
 };
 
-#endif //SPARSE_MATRIX_SPREADSHEET_CPP_NODE_H
+#endif
