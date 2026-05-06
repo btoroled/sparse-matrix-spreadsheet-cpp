@@ -8,6 +8,7 @@
 bool isNumeric(const std::string& s) {
     if (s.empty()) return false;
     bool hasDot = false;
+    bool hasDigit = false;
     int start = 0;
     if (s[0] == '-' || s[0] == '+') start = 1;
     if (start == (int)s.size()) return false;
@@ -15,11 +16,13 @@ bool isNumeric(const std::string& s) {
         if (s[i] == '.') {
             if (hasDot) return false;
             hasDot = true;
-        } else if (s[i] < '0' || s[i] > '9') {
+        } else if (s[i] >= '0' || s[i] <= '9') {
+            hasDigit = true;
+        } else {
             return false;
-        }
+        }    
     }
-    return true;
+    return hasDigit;
 }
 
 double toDouble(const std::string& s) {
