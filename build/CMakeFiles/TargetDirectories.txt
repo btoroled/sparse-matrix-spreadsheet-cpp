@@ -1,0 +1,8 @@
+/home/cloudz/AED-Project/sparse-matrix-spreadsheet-cpp/build/CMakeFiles/spreadsheet.dir
+/home/cloudz/AED-Project/sparse-matrix-spreadsheet-cpp/build/CMakeFiles/tests.dir
+/home/cloudz/AED-Project/sparse-matrix-spreadsheet-cpp/build/CMakeFiles/edit_cache.dir
+/home/cloudz/AED-Project/sparse-matrix-spreadsheet-cpp/build/CMakeFiles/rebuild_cache.dir
+/home/cloudz/AED-Project/sparse-matrix-spreadsheet-cpp/build/CMakeFiles/spreadsheet_autogen_timestamp_deps.dir
+/home/cloudz/AED-Project/sparse-matrix-spreadsheet-cpp/build/CMakeFiles/spreadsheet_autogen.dir
+/home/cloudz/AED-Project/sparse-matrix-spreadsheet-cpp/build/CMakeFiles/tests_autogen_timestamp_deps.dir
+/home/cloudz/AED-Project/sparse-matrix-spreadsheet-cpp/build/CMakeFiles/tests_autogen.dir
