@@ -157,7 +157,7 @@ void MainWindow::refreshTable() {
             while (cur) {
                 if (cur->col < VISIBLE_COLS) {
                     QTableWidgetItem* item = new QTableWidgetItem(QString::fromStdString(cur->value));
-                    item->setBackground(Qt::yellow); // celda ocupada resaltada
+                    item->setBackground(QColor(65,105,225)); // celda ocupada resaltada
                     table->setItem(rh->row, cur->col, item);
                 }
                 cur = cur->right;
